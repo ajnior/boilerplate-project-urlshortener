@@ -10,8 +10,6 @@ router.post("/new", [jsonParser, urlencodedParser], async (req, res) => {
   try {
     const { url: newUrl } = req.body;
 
-    console.log("URL >>", url);
-
     const urls = await ShortUrl.find({}).select("-_id original_url short_url");
 
     for (let i = 0; i < urls.length; i++) {
