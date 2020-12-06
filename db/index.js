@@ -9,9 +9,9 @@ const connectMongoDB = async () => {
   console.log("Connected to mongoDB...");
 };
 
-const connectDB = () => {
+const connectDB = async () => {
   try {
-    connectMongoDB();
+    await connectMongoDB();
   } catch (e) {
     console.log("Problem connecting with mongoDB", e);
   }
