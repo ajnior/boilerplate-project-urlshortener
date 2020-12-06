@@ -6,7 +6,7 @@ const shortUrlSchema = new Schema({
     required: "URL can't be empty",
     validate: {
       validator: function (v) {
-        const validUrlRegex = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
+        const validUrlRegex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
         return validUrlRegex.test(v);
       },
       message: (props) => "invalid url",
