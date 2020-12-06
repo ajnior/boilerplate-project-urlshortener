@@ -26,7 +26,7 @@ router.post("/new", [jsonParser, urlencodedParser], async (req, res) => {
       .status(200)
       .json({ original_url: url.original_url, short_url: url.short_url });
   } catch (e) {
-    res.status(500).json({ error: "invalid url" });
+    res.json({ error: "invalid url" });
   }
 });
 
